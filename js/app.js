@@ -1,9 +1,12 @@
 // HTML Elements
+// These are actually DOM elements, if we're being picky
+// If the DOM lagged in loading, you could potentially run into an issue where 
 const statusDiv = document.querySelector(".status");
 const resetDiv = document.querySelector(".reset");
 const cellDivs = document.querySelectorAll(".game-cell");
 
 // game constants
+// cool symbols
 const xSymbol = "⋊";
 const oSymbol = "𝒪";
 
@@ -12,6 +15,7 @@ let gameIsLive = true;
 let xIsNext = true;
 
 // functions
+// nice use of ternery
 const letterToSymbol = (letter) => (letter === "x" ? xSymbol : oSymbol);
 
 const handleWin = (letter) => {
@@ -143,3 +147,5 @@ resetDiv.addEventListener("click", handleReset);
 for (const cellDiv of cellDivs) {
   cellDiv.addEventListener("click", handleCellClick);
 }
+
+// This is all GREAT work, Yoel! I would challenge you to implement a score-keeping feature and even an option to play to computuer.
